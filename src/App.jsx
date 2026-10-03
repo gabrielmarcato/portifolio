@@ -87,7 +87,7 @@ function Hero() {
         </div>
         </div>
         <div className="photo-frame">
-          <img src="/foto.jpg" alt={`Foto de ${profile.name}`} width="400" height="400" />
+          <img src={`${import.meta.env.BASE_URL}foto.jpg`} alt={`Foto de ${profile.name}`} width="400" height="400" />
         </div>
       </div>
     </section>
