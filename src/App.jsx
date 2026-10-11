@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { profile, stats, skills, experience, education, languages } from './data.js'
+import { profile, stats, skills, experience, education, languages, courses } from './data.js'
 
 const sections = [
   { id: 'sobre', label: 'Sobre' },
   { id: 'habilidades', label: 'Habilidades' },
   { id: 'experiencia', label: 'Experiência' },
   { id: 'formacao', label: 'Formação' },
+  { id: 'cursos', label: 'Cursos' },
   { id: 'contato', label: 'Contato' },
 ]
 
@@ -162,6 +163,27 @@ function Experience() {
   )
 }
 
+function Courses() {
+  const totalHours = courses.reduce((sum, c) => sum + c.hours, 0)
+  return (
+    <Section id="cursos" title="Cursos e certificados">
+      <p className="about reveal">
+        {courses.length} certificações e {totalHours}h de estudo contínuo em desenvolvimento web, mobile e backend.
+      </p>
+      <div className="courses">
+        {courses.map((c) => (
+          <div key={c.id} className="card course reveal">
+            <span className="course__provider">{c.provider}</span>
+            <h3>{c.name}</h3>
+            <span className="period">{c.hours}h</span>
+            <span className="course__id">Registro: {c.id}</span>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
 function Education() {
   return (
     <Section id="formacao" title="Formação e idiomas">
@@ -219,6 +241,7 @@ export default function App() {
         <Skills />
         <Experience />
         <Education />
+        <Courses />
         <Contact />
       </main>
       <footer className="footer">

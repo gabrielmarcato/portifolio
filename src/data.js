@@ -48,8 +48,7 @@ export const experience = [
     place: 'São Paulo, SP',
     period: '07/2023 – 12/2025',
     points: [
-      'Desenvolvi os aplicativos dos softwares Captor e Prisma, voltados à gestão de manutenção industrial e facilities management, com React Native, Expo e TypeScript, incluindo ordens de serviço, controle de estoque e gerenciamento de locações.',
-      'Representei a Aditiva, parceira exclusiva da Sisteplant no Brasil, na implantação das soluções em clientes.',
+      'Desenvolvi os aplicativos do software Prisma, voltado à gestão de manutenção industrial e facilities management, com React Native, Expo e TypeScript, incluindo ordens de serviço, controle de estoque e gerenciamento de locações.',
     ],
   },
   {
@@ -94,4 +93,21 @@ export const education = {
 export const languages = [
   { name: 'Português', level: 'Nativo' },
   { name: 'Inglês', level: 'Intermediário' },
+]
+
+export const courses = [
+  { name: 'AI-Driven Development', provider: 'Formação DEV', hours: 44, id: 'caa21359-081d-4f9d-b56f-06122d1bdc92' },
+  { name: 'Design com IA', provider: 'Formação DEV', hours: 2, id: 'ed3f7705-7242-42b8-8606-762245357c26' },
+  { name: 'React Native - Android e IOS', provider: 'Udemy', hours: 45, id: 'UC-a04c3fd0-12e0-4eb9-995a-b61c5ad7cc9d' },
+  { name: 'ReactJS e Redux', provider: 'Udemy', hours: 55, id: 'UC-a383dd82-b86e-46e3-8cca-6fc8396b9138' },
+  { name: 'NestJS Essencial', provider: 'Udemy', hours: 24, id: 'UC-0ae02591-6526-4d90-b03b-bf69323eb2b2' },
+  { name: 'Next.JS Essencial', provider: 'Udemy', hours: 29, id: 'UC-7c9eaaa4-d7dd-4f06-88d4-f626e268ecaf' },
+  { name: 'Node.js - TypeORM', provider: 'Udemy', hours: 35, id: 'UC-98c10760-2cb0-46e8-9b4f-bbb17897b220' },
+  { name: 'Docker Essencial', provider: 'Udemy', hours: 6, id: 'UC-7c6a00a4-95b7-42a7-b87c-86646075cc35' },
+  { name: 'Python - Django', provider: 'Udemy', hours: 10, id: 'UC-73f487e5-4ab3-4378-b1c3-9e3d60ebadf1' },
+  { name: 'Python 3 Essencial', provider: 'Udemy', hours: 26, id: 'UC-75a6307e-0832-4213-a3e0-5236e226ca28' },
+  { name: 'VueJS Essencial', provider: 'Udemy', hours: 43, id: 'UC-80b5c567-bed5-48ec-b8d6-8f369599098f' },
+  { name: 'PHP - Laravel', provider: 'Udemy', hours: 32, id: 'UC-2f369227-151a-41d4-94fe-9175af46922e' },
+  { name: 'Web Moderno Essencial', provider: 'Udemy', hours: 90, id: 'UC-77a84011-4917-43af-a48e-9d975cf5ce8d' },
+  { name: 'Algoritmo e Lógica de Programação', provider: 'Udemy', hours: 18, id: 'UC-2749718f-2be0-4b43-bd55-05c3a80b903c' },
 ]
