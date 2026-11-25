@@ -111,3 +111,32 @@ export const courses = [
   { name: 'Web Moderno Essencial', provider: 'Udemy', hours: 90, id: 'UC-77a84011-4917-43af-a48e-9d975cf5ce8d' },
   { name: 'Algoritmo e Lógica de Programação', provider: 'Udemy', hours: 18, id: 'UC-2749718f-2be0-4b43-bd55-05c3a80b903c' },
 ]
+
+export const projects = [
+  {
+    id: 'brasa-burger',
+    name: 'Brasa Burger',
+    kind: 'App de delivery',
+    accent: '#ff9d2e',
+    description:
+      'Aplicativo de pedidos para hamburgueria: navegação por categorias, ofertas e itens populares, personalização de produtos (tamanho e adicionais), favoritos, carrinho com cupom de desconto e fechamento do pedido.',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Reanimated'],
+    folder: 'apps/app1',
+    shots: [
+      'Screenshot_1795107022.png', 'Screenshot_1795107028.png',
+      'Screenshot_1795107037.png', 'Screenshot_1795107042.png', 'Screenshot_1795107044.png',
+      'Screenshot_1795107050.png', 'Screenshot_1795107060.png', 'Screenshot_1795107068.png',
+    ],
+  },
+  {
+    id: 'app-financeiro',
+    name: 'Fintech Wallet',
+    kind: 'App financeiro',
+    accent: '#3eebb7',
+    description:
+      'Carteira digital com saldo total, transferências e recebimentos, categorias de serviços, destaques de investimentos e gráfico de rendimento com aportes mensais, histórico de transações e confirmação de operações.',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Gráficos'],
+    folder: 'apps/app2',
+    shots: ['home.png', 'transferir.png', 'sucesso.png', 'investimento.png', 'historico.png'],
+  },
+]

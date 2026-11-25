@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { profile, stats, skills, experience, education, languages, courses } from './data.js'
+import { profile, stats, skills, experience, education, languages, courses, projects } from './data.js'
 
 const sections = [
   { id: 'sobre', label: 'Sobre' },
+  { id: 'projetos', label: 'Projetos' },
   { id: 'habilidades', label: 'Habilidades' },
   { id: 'experiencia', label: 'Experiência' },
   { id: 'formacao', label: 'Formação' },
@@ -118,6 +119,46 @@ function About() {
           </div>
         ))}
       </div>
+    </Section>
+  )
+}
+
+function Projects() {
+  const [zoom, setZoom] = useState(null)
+  const base = import.meta.env.BASE_URL
+  useEffect(() => {
+    if (!zoom) return
+    const onKey = (e) => e.key === 'Escape' && setZoom(null)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [zoom])
+  return (
+    <Section id="projetos" title="Projetos">
+      {projects.map((p, i) => (
+        <article className="project reveal" key={p.id} style={{ '--pc': p.accent }}>
+          <div className="project__info">
+            <span className="project__num">{String(i + 1).padStart(2, '0')} // {p.kind}</span>
+            <h3>{p.name}</h3>
+            <p>{p.description}</p>
+            <ul className="tags">{p.tags.map((t) => <li key={t}>{t}</li>)}</ul>
+          </div>
+          <div className="project__shots">
+            {p.shots.map((f, n) => {
+              const src = `${base}${p.folder}/${f}`
+              return (
+                <button className="phone" key={f} onClick={() => setZoom(src)} aria-label={`Ampliar tela ${n + 1} de ${p.name}`}>
+                  <img src={src} alt={`Tela ${n + 1} do app ${p.name}`} loading="lazy" />
+                </button>
+              )
+            })}
+          </div>
+        </article>
+      ))}
+      {zoom && (
+        <div className="lightbox" onClick={() => setZoom(null)} role="dialog" aria-modal="true">
+          <img src={zoom} alt="Tela ampliada" />
+        </div>
+      )}
     </Section>
   )
 }
@@ -238,6 +279,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Projects />
         <Skills />
         <Experience />
         <Education />

@@ -143,3 +143,50 @@ ul { list-style: none; }
 .course h3 { margin: 0; }
 .course__provider { color: var(--accent); font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .course__id { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: .72rem; word-break: break-all; }
+
+/* Projetos */
+.project {
+  --pc: var(--accent);
+  position: relative; display: grid; grid-template-columns: 340px 1fr; gap: 36px; align-items: center;
+  padding: 32px; margin-bottom: 28px; border-radius: 24px; overflow: hidden;
+  background: linear-gradient(160deg, rgba(21,28,56,.9), rgba(11,16,32,.9));
+  border: 1px solid color-mix(in srgb, var(--pc) 35%, var(--border));
+  box-shadow: 0 0 40px color-mix(in srgb, var(--pc) 12%, transparent), inset 0 0 0 1px rgba(255,255,255,.02);
+}
+.project::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: linear-gradient(color-mix(in srgb, var(--pc) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--pc) 8%, transparent) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at 100% 0, #000, transparent 70%);
+}
+.project::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pc), transparent);
+}
+.project__info, .project__shots { position: relative; z-index: 1; }
+.project__num { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--pc); letter-spacing: .05em; text-transform: uppercase; }
+.project h3 { font-size: 1.9rem; margin: 8px 0 12px; letter-spacing: -.02em; text-shadow: 0 0 24px color-mix(in srgb, var(--pc) 50%, transparent); }
+.project p { color: var(--muted); margin-bottom: 18px; }
+.project .tags li { border-color: color-mix(in srgb, var(--pc) 45%, var(--border)); color: var(--pc); }
+.project__shots {
+  display: flex; gap: 16px; overflow-x: auto; padding: 12px 4px 18px; scroll-snap-type: x proximity;
+  scrollbar-width: thin; scrollbar-color: var(--pc) transparent;
+}
+.phone {
+  flex: 0 0 auto; width: 170px; padding: 6px; border-radius: 28px; cursor: zoom-in; scroll-snap-align: start;
+  background: #05070f; border: 1px solid color-mix(in srgb, var(--pc) 50%, #222);
+  box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 18px color-mix(in srgb, var(--pc) 20%, transparent);
+  transition: transform .25s, box-shadow .25s;
+}
+.phone:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 16px 40px rgba(0,0,0,.6), 0 0 30px color-mix(in srgb, var(--pc) 55%, transparent); }
+.phone img { display: block; width: 100%; aspect-ratio: 9 / 20; object-fit: cover; border-radius: 22px; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 20px; cursor: zoom-out;
+  background: rgba(5,7,15,.88); backdrop-filter: blur(8px);
+}
+.lightbox img { max-height: 92vh; max-width: 92vw; border-radius: 28px; box-shadow: 0 0 80px rgba(124,156,255,.35); }
+@media (max-width: 860px) {
+  .project { grid-template-columns: 1fr; padding: 22px; }
+  .phone { width: 140px; }
+}
